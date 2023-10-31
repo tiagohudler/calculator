@@ -1,14 +1,23 @@
+const screen1 = document.querySelector('#output');
+const inputScreen = document.querySelector('#input');
+
 let input1 = 0;
 let input2 = 0;
 let operator = '';
 let reset = 0;
 let result;
+let test = 0;
 
 function takeNumber () {
-    if (reset)
+    if (reset){
         input2 = Number(this.textContent);
-    else
+        inputScreen.textContent += ` ${input2}`
+    }
+    else {
         input1 = Number(this.textContent);
+        inputScreen.textContent += ` ${input1}`
+    }    
+    
 }
 
 function operate () {
@@ -21,12 +30,24 @@ function operate () {
 }
 
 function takeOperator () {
-    operator = this.textContent;
+    let newOperator = this.textContent;
     if (reset){
         result = operate();
-        screen1.textContent = `${input1} ${operator} ${input2}`;
+        screen1.textContent = `${input1} ${operator} ${input2} ${newOperator}`;
         inputScreen.value = '';
     }
-    reset ^= reset;
+    else
+        inputScreen.textContent += ` ${newOperator}`
+    operator = newOperator;
+    reset ^= 1;
 }
 
+function testing () {
+    test ^= 1;
+    console.log(test);
+}
+
+testbtn = document.querySelector('#teste');
+testbtn.addEventListener('click', () => {
+    testing();
+});
