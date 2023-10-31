@@ -3,8 +3,8 @@ const inputScreen = document.querySelector('#input');
 const numButtons = document.querySelectorAll('.numbtn');
 const opButtons = document.querySelectorAll('.btn');
 
-let input1 = 0;
-let input2 = 0;
+let input1 = '';
+let input2 = '';
 let operator = '';
 let reset = 0;
 let result;
@@ -12,31 +12,38 @@ let test = 0;
 
 function takeNumber (arg) {
     if (reset){
-        input2 = Number(arg.textContent);
-        inputScreen.textContent += ` ${input2}`;
+        input2 += arg.textContent;
+        inputScreen.textContent += ` ${arg.textContent}`;
     }
     else {
-        input1 = Number(arg.textContent);
-        inputScreen.textContent += ` ${input1}`;
+        input1 += arg.textContent;
+        inputScreen.textContent += arg.textContent;
     }    
     
 }
 
 function operate () {
+    let a = Number(input1);
+    let b = Number(input2);
     switch (operator){
-        case '+': return input1 + input2;
-        case '-': return input1 - input2;
-        case '*': return input1 * input2;
-        case '/': return input1 / input2;
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/': return a / b;
     }
 }
 
-function takeOperator () {
-    let newOperator = this.textContent;
+function takeOperator (arg) {
+    let newOperator = arg.textContent;
     if (reset){
         result = operate();
         screen1.textContent = `${input1} ${operator} ${input2} ${newOperator}`;
-        inputScreen.value = '';
+        inputScreen.textContent = result;
+        if (newOperator != '='){
+            reset ^= 1;
+        }
+        input1 = result;
+        input2 = '';
     }
     else
         inputScreen.textContent += ` ${newOperator}`;
@@ -50,7 +57,11 @@ numButtons.forEach((button) => {
     });
 });
 
-
+opButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        takeOperator(button);
+    });
+});
 
 //test section
 function testing () {
