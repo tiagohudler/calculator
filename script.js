@@ -13,7 +13,7 @@ let test = 0;
 function takeNumber (arg) {
     if (reset){
         input2 += arg.textContent;
-        inputScreen.textContent += ` ${arg.textContent}`;
+        inputScreen.textContent += arg.textContent;
     }
     else {
         input1 += arg.textContent;
@@ -46,7 +46,7 @@ function takeOperator (arg) {
         input2 = '';
     }
     else
-        inputScreen.textContent += ` ${newOperator}`;
+        inputScreen.textContent += ` ${newOperator} `;
     operator = newOperator;
     reset ^= 1;
 }
