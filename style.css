@@ -25,4 +25,11 @@ body{
 #output {
     background-color: white;
     margin: 10px;
+    height: 20px;
+}
+
+#input {
+    background-color: white;
+    margin: 10px;
+    height: 20px;
 }
