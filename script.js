@@ -80,3 +80,7 @@ clearbtn.addEventListener('click', () => {
 veter.addEventListener('mouseover', () => {
     body.id = "oii";
 });
+
+veter.addEventListener('mouseout', () => {
+    body.removeAttribute('id');
+});
