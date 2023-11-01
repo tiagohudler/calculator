@@ -38,12 +38,14 @@ body{
     height: 50px;
     font-size: 40px;
     width: 50px;
+    border: 2px solid gray;
 }
 
 .numbtn {
     height: 60px;
     width: 60px;
     font-size: 40px;
+    border: 2px solid gray;
 }
 
 #clearbtn, #veter {
@@ -51,10 +53,11 @@ body{
     width: 60px;
     font-size: medium;
     font-weight: 700;
+    border: 2px solid gray;
 }
 
 .screen{
-    background-color: white;
+    background-color: rgb(238, 209, 209);
     margin: 0px 10px 10px 10px;
     height: 30px;
     font-size: 20px;
@@ -74,4 +77,9 @@ body{
 
 #oii {
     background-image: url("garlic\ bread.jpg");
+}
+
+#clearbtn{
+    background-color: red;
+    color: white;
 }
