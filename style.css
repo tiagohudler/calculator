@@ -6,8 +6,9 @@ body{
 
 #frame {
     width: 325px;
-    height: 404px;
+    height: 414px;
     background-color: black;
+    border-radius: 10px;
 }
 
 #button-container {
@@ -39,20 +40,36 @@ body{
     width: 50px;
 }
 
-.numbtn, #clearbtn, #veter {
+.numbtn {
     height: 60px;
     width: 60px;
+    font-size: 40px;
+}
+
+#clearbtn, #veter {
+    height: 60px;
+    width: 60px;
+    font-size: medium;
+    font-weight: 700;
 }
 
 .screen{
     background-color: white;
     margin: 0px 10px 10px 10px;
-    height: 20px;
+    height: 30px;
+    font-size: 20px;
+    text-align: end;
+    padding: 0px 5px 0px 5px;
 }
 
 #output {
     margin-bottom: 0px;
     margin-top: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#input {
+    border-radius: 0px 0px 10px 10px;
 }
 
 #oii {
