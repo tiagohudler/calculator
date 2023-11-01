@@ -2,13 +2,15 @@ const screen1 = document.querySelector('#output');
 const inputScreen = document.querySelector('#input');
 const numButtons = document.querySelectorAll('.numbtn');
 const opButtons = document.querySelectorAll('.btn');
+const clearbtn = document.querySelector('#clearbtn');
+const veter = document.querySelector('#veter');
+const body = document.querySelector('body');
 
 let input1 = '';
 let input2 = '';
 let operator = '';
 let reset = 0;
 let result;
-let test = 0;
 
 function takeNumber (arg) {
     if (reset){
@@ -40,6 +42,8 @@ function takeOperator (arg) {
         screen1.textContent = `${input1} ${operator} ${input2} ${newOperator}`;
         inputScreen.textContent = result;
         if (newOperator != '='){
+            screen1.textContent = `${input1} ${operator} ${input2}`;
+            inputScreen.textContent += ` ${newOperator} `
             reset ^= 1;
         }
         input1 = result;
@@ -63,13 +67,16 @@ opButtons.forEach((button) => {
     });
 });
 
-//test section
-function testing () {
-    test ^= 1;
-    console.log(test);
-}
+clearbtn.addEventListener('click', () => {
+    reset = 0;
+    inputScreen.textContent = '';
+    screen1.textContent = '';
+    input1 = '';
+    input2 = '';
+    operator = '';
+    result = null;
+});
 
-testbtn = document.querySelector('#teste');
-testbtn.addEventListener('click', () => {
-    testing();
+veter.addEventListener('mouseover', () => {
+    body.id = "oii";
 });
