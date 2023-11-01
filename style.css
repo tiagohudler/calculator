@@ -4,11 +4,17 @@ body{
     align-items: center;
 }
 
+h1 {
+    font-family: "Luckiest Guy";
+    font-size: 40px;
+}
+
 #frame {
     width: 325px;
     height: 414px;
     background-color: black;
     border-radius: 10px;
+    margin-top: 50px;
 }
 
 #button-container {
@@ -48,12 +54,20 @@ body{
     border: 2px solid gray;
 }
 
+.btn:hover, .numbtn:hover {
+    background-color: dimgray;
+}
+
 #clearbtn, #veter {
     height: 60px;
     width: 60px;
     font-size: medium;
     font-weight: 700;
     border: 2px solid gray;
+}
+
+#clearbtn:hover {
+    background-color: darkred;
 }
 
 .screen{
