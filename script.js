@@ -39,6 +39,7 @@ function takeOperator (arg) {
     let newOperator = arg.textContent;
     if (reset){
         result = operate();
+        if (result == "Infinity") result = "Error, please hit clear";
         screen1.textContent = `${input1} ${operator} ${input2} ${newOperator}`;
         inputScreen.textContent = result;
         if (newOperator != '='){
