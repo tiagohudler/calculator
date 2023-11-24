@@ -77,12 +77,8 @@ clearbtn.addEventListener('click', () => {
     result = null;
 });
 
-veter.addEventListener('mouseover', () => {
-    body.id = "oii";
-    veter.className  = "numbtn";
+veter.addEventListener('click', () => {
+    const bodyid = body.id === "oii" ? '' : "oii";
+    body.id = bodyid;
 });
 
-veter.addEventListener('mouseout', () => {
-    body.removeAttribute('id');
-    veter.removeAttribute('class');
-});
