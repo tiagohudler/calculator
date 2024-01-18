@@ -31,7 +31,11 @@ function operate () {
         case '+': return a + b;
         case '-': return a - b;
         case '*': return a * b;
-        case '/': return a / b;
+        case '/': { 
+            if (b != 0) return a / b;
+            else return "Error, please press clear";
+        }
+
     }
 }
 
@@ -39,7 +43,6 @@ function takeOperator (arg) {
     let newOperator = arg.textContent;
     if (reset){
         result = operate();
-        if (result == "Infinity") result = "Error, please hit clear";
         screen1.textContent = `${input1} ${operator} ${input2} ${newOperator}`;
         inputScreen.textContent = result;
         if (newOperator != '='){
